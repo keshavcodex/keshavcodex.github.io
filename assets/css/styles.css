@@ -880,12 +880,18 @@ img{
     .home__container{
         row-gap: 5rem;
     }
+    .home__social{
+        transform: translateX(2rem);
+    }
     .home__content{
         padding-top: 5.5rem;
         column-gap: 2rem;
     }
     .home__blob{
-        width: 270px;
+        width: 220px;
+    }
+    .home__data{
+        transform: translateX( 1rem);
     }
     .home__scroll{
         display: block;
@@ -943,7 +949,7 @@ img{
     
 }
 /* For large devices */
-@media screen and (min-width:1024px){
+@media screen and (min-width:1000px){
     .header,
     .main,
     .footer__container{
@@ -951,11 +957,17 @@ img{
     }
 
     .home__blob{
-        width: 320px;
+        width: 280px;
     }
+    
     .home__social{
         transform: translateX(-6rem);
     }
+    
+    .home__data{
+        transform: translateX(-2rem);
+    }
+
     .contact__form{
         width: 460px;
     }
