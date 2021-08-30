@@ -797,6 +797,8 @@ img{
     .qualification__data{
         gap: .5rem;
     }
+
+    
 }
 
 /* For medium devices */
@@ -824,6 +826,7 @@ img{
         justify-content: center;
 
     }
+    
 }
 
 @media screen and (min-width: 768px){
@@ -831,6 +834,8 @@ img{
         margin-left: auto;
         margin-right: auto;
     }   
+
+    
 
     body{
         margin: 0;
@@ -929,6 +934,13 @@ img{
     .footer__copy{
         margin-top: 4.5rem;
     }
+    #nav-close {
+        display: none;
+    }
+    #nav-toggle{
+        display: none;
+    }
+    
 }
 /* For large devices */
 @media screen and (min-width:1024px){
@@ -950,6 +962,11 @@ img{
     .contact__inputs{
         grid-template-columns: repeat(2, 1fr);
     }
+
+   #nav-close{
+       display: none;
+   }
+
 }
 /* Glowing button*/
 
