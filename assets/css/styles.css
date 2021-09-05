@@ -1,17 +1,32 @@
 /*==================== GOOGLE FONTS ====================*/
 
 
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+        /* HSL color mode */
+        --first-color:rgb(39, 102, 175);
+        --first-color-alt:rgb(241, 189, 189);
+        --first-color-normal:rgb(57, 130, 199);
+        --first-color-second:hsl(var(--hue-color),30%,8%);
+        --title-color:hsl(var(--hue-color),8%,95%);
+        --text-color:hsl(var(--hue-color),8%,75%);
+        --input-color:hsl(var(--hue-color),29%,16%);
+        --body-color:hsl(var(--hue-color),28%,12%);
+        --container-color:#FFF;
+        --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+        --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
 /*==================== VARIABLES CSS ====================*/
 :root {
     --header-height: 3rem ;
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 345; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
     /* HSL color mode */
-    --first-color:rgb(109, 4, 4);
-    --first-color-second:rgb(92, 17, 17);
+    --first-color:rgb(66, 111, 168);
+    --first-color-second:rgb(17, 35, 92);
     --first-color-alt:hsl(var(--hue-color),57%,10%);
     --first-color-lighter:hsl(var(--hue-color),92%,85%);
     --title-color:hsl(var(--hue-color),8%,15%);
@@ -36,8 +51,9 @@
     --smaller-font-size: .75rem;
 
     /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
+    --font-light:300
+    --font-medium: 400;
+    --font-semi-bold: 500;
 
     /*========== Margenes Bottom ==========*/
     /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
@@ -69,21 +85,6 @@
     }
 }
 
-/*========== Variables Dark theme ==========*/
-body.dark-theme{
-        /* HSL color mode */
-        --first-color:rgb(175, 39, 39);
-        --first-color-alt:rgb(241, 189, 189);
-        --first-color-normal:rgb(199, 57, 57);
-        --first-color-second:hsl(var(--hue-color),30%,8%);
-        --title-color:hsl(var(--hue-color),8%,95%);
-        --text-color:hsl(var(--hue-color),8%,75%);
-        --input-color:hsl(var(--hue-color),29%,16%);
-        --body-color:hsl(var(--hue-color),28%,12%);
-        --container-color:#FFF;
-        --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-        --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
-}
 
 /*========== Button Dark/Light ==========*/
 .nav__btns{
@@ -119,6 +120,7 @@ body{
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 h1,h2,h3,h4{
@@ -157,6 +159,7 @@ img{
 .section__title,
 .section__subtitle{
     text-align: center;
+    margin-top: var(--mb-1);
 }
 
 /*==================== LAYOUT ====================*/
@@ -223,7 +226,7 @@ img{
     align-items: center;
     font-size: var(--small-font-size);
     color: var(--title-color);
-    font-weight: var(--font-medium);
+    font-weight: var(--font-light);
 }
 
 .nav__link:hover{
@@ -464,7 +467,41 @@ img{
     display: flex;
     justify-content: center;
 }
+
 /*==================== SKILLS ====================*/
+/* .tech__container{
+    display: flex;
+    margin: auto;
+    
+    align-items:center;
+} */
+.tech{
+    padding:.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tech__incenter{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    size: 5px;
+}
+.tech__data{
+    display: inline-block;
+    align-items:center;
+    flex-direction: column;
+    align-items: center;
+    margin: .3rem;
+}
+
+.grow {
+    transition: .2s ease-in-out;
+}
+.grow:hover {
+    transform: scale(1.15);
+}
+
 .skills__container{
     row-gap: 0;
 }
@@ -773,7 +810,7 @@ img{
 }
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
-@media screen and (max-width: 350px){
+@media screen and (max-width: 414px){
     .container{
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -798,6 +835,16 @@ img{
         gap: .5rem;
     }
 
+    .tech__container{
+        display: table;
+        align-items: center;
+        width: none;
+        margin: .5rem;
+    }
+    .tech__data{
+         padding: .2rem;
+    }
+
     
 }
 
@@ -811,7 +858,7 @@ img{
     }
     .home__img{
         order: 1;
-        justify-self: center;
+        justify-self: baseline;
     }
     .about__container,
     .skills__container,
@@ -826,6 +873,15 @@ img{
         justify-content: center;
 
     }
+    .tech__container{
+        display: block;
+        align-items: center;
+        width: auto;
+        margin: 1.5rem;
+    }
+    .tech__data{
+         padding: 3px;
+    }
     
 }
 
@@ -835,7 +891,6 @@ img{
         margin-right: auto;
     }   
 
-    
 
     body{
         margin: 0;
@@ -946,6 +1001,12 @@ img{
     #nav-toggle{
         display: none;
     }
+    .tech__container{
+        display: block;
+        align-items: center;
+        width: 85%;
+        margin: auto;
+    }
     
 }
 /* For large devices */
@@ -977,6 +1038,13 @@ img{
 
    #nav-close{
        display: none;
+   }
+
+   .tech__container{
+       display: block;
+       align-items: center;
+       width: none;
+       margin: auto;
    }
 
 }
